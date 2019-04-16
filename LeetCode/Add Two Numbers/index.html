@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const l1 = {
+        value: 2,
+        next: {
+          value: 4,
+          next: {
+            value: 3,
+            next: null
+          }
+        }
+      };
+      const l2 = {
+        value: 5,
+        next: {
+          value: 6,
+          next: {
+            value: 4,
+            next: null
+          }
+        }
+      };
+
+      let num =
+        parseInt(`${l1.next.next.value}${l1.next.value}${l1.value}`) +
+        parseInt(`${l2.next.next.value}${l2.next.value}${l2.value}`);
+        num += num.toString();
+        let listNode = {
+            val: parseInt(num[2]),
+            next:{
+                val: parseInt(num[1]),
+                next: {
+                    val: parseInt(num[0]),
+                    next: null
+                }
+            }
+        }
+        console.log(listNode);
+    </script>
+  </body>
+</html>

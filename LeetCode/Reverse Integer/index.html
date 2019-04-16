@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const reverse = x => {
+        let y;
+        if (x < 0) {
+          y = x.toString().split("").reverse();
+          y.unshift("-");
+          y.pop();
+          y = parseInt(y.join(""));
+          if (y < -2147483648) {
+            return 0;
+          }
+          return y
+        } else {
+          y = parseInt(x.toString().split("").reverse().join(""));
+          if (y > 2147483647) {
+            return 0;
+          }
+          return y
+        }
+      };
+
+      console.log(reverse(-123));
+    </script>
+  </body>
+</html>

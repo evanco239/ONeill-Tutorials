@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <script>
+    
+        const nums = [7,12,11,15,2,9,9,2], target = 9;
+
+        const twoSum = (nums, target) => {
+            let answer;
+            nums.forEach((item,index)=>{
+                for(i=index+1; i<nums.length; i++){
+                    if(item + nums[i] === target){
+                        return answer = [index, i]
+                    }
+                }
+            })
+            console.log(answer);
+            return answer;
+        }
+
+        twoSum(nums, target)
+
+
+    </script>
+    
+</body>
+</html>

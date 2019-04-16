@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Light | Dark Mode</title>
+
+    <style>
+      hr {
+        background: #eee;
+      }
+
+      .card {
+        border: solid 1px #eee;
+      }
+    </style>
+  </head>
+  <body class="mt-5 bg-light">
+    <div class="container text-center">
+      <h1>
+        <a id="toggle" class="btn btn-lg bg-light text-dark" href="#"
+          >Toggle Dark Mode</a
+        >
+      </h1>
+      <hr />
+
+      <section>
+        <h1>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Exercitationem, voluptatem?
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
+          rerum eaque, accusantium ratione sapiente voluptates est quo ipsa
+          corporis aliquam nemo provident vel dicta recusandae sit cupiditate
+          illo autem maxime?
+        </p>
+      </section>
+
+      <hr />
+
+      <section class="row text-dark justify-content-around">
+        <div id="card1" class="card bg-light col-md-5">
+          <h1 class="card-title">Lorem ipsum dolor sit amet.</h1>
+          <hr />
+          <p class="card-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+            voluptates eos itaque, suscipit libero alias earum commodi velit
+            voluptatibus doloribus?
+          </p>
+        </div>
+        <div id="card2" class="card bg-light col-md-5 ">
+          <h1 class="card-title">Lorem ipsum dolor sit amet.</h1>
+          <hr />
+          <p class="card-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
+            similique dolor voluptatibus illo atque facilis corporis aut
+            nesciunt, expedita quibusdam.
+          </p>
+        </div>
+      </section>
+      <hr />
+
+    </div>
+
+    <script>
+      const body = document.querySelector("body");
+      const card1 = document.querySelector("#card1");
+      const card2 = document.querySelector("#card2");
+      const light = document.querySelector("#light");
+      const dark = document.querySelector("#dark");
+
+      const changeBackground = () => {
+        body.classList.toggle("bg-dark");
+        body.classList.toggle("text-light");
+        card1.classList.toggle("bg-dark");
+        card1.classList.toggle("text-light");
+        card2.classList.toggle("bg-dark");
+        card2.classList.toggle("text-light");
+      };
+      const changeCard = e => {
+        card1.classList.toggle("bg-dark");
+        card1.classList.toggle("text-light");
+      };
+
+      card1.addEventListener("click", changeCard);
+
+      document
+        .querySelector("#toggle")
+        .addEventListener("click", changeBackground);
+    </script>
+  </body>
+</html>
