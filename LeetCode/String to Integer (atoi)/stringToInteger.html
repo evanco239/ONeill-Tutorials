@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const myAtio = str => {
+
+        let num = parseInt(str);
+        if(Number.isNaN(num)){
+            return 0
+        }
+        if(num< -2147483648){
+            return -2147483648
+        }
+        if(num> 2147483647){
+            return 2147483647
+        }
+        return num
+      };
+
+      myAtio("   42");
+      myAtio("4193 with words");
+      myAtio("words and 987");
+      myAtio("   -42");
+      myAtio("-91283472332");
+      myAtio("-");
+      myAtio("-abc");
+    </script>
+  </body>
+</html>
