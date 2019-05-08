@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const lengthOfLongestSubstring = function(s) {
+        let temp = [];
+        let maxLength = 0;
+
+        for (let i = 0; i < s.length; i++) {
+            if(temp.indexOf(s[i]) === -1){
+                temp.push(s[i]);
+                if(temp.length > maxLength){
+                    maxLength = temp.length;
+                }
+            }else{
+                temp = temp.slice(temp.indexOf(s[i]) +1, temp.length);
+                temp.push(s[i]);
+            }
+        }
+        console.log(maxLength)
+      };
+
+      lengthOfLongestSubstring("asdas");
+      lengthOfLongestSubstring("abcabcbb");
+      lengthOfLongestSubstring("bbbbb");
+      lengthOfLongestSubstring("pwwkew");
+    </script>
+  </body>
+</html>
