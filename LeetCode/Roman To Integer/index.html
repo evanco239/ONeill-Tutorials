@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      
+
+      const romanToInt = s => {
+
+        const key = {I:1, V:5, X:10, L:50, C:100, D:500, M:1000};
+        let ans = [];
+
+        for(let i=0; i<s.length; i++){
+            if(key[s[i]]< key[s[i+1]]){
+                //subtract it
+                ans.push(key[s[i+1]]-key[s[i]]);
+                i++;
+                continue;
+            }
+            else{
+                // add to the array
+                ans.push(key[s[i]])
+            }
+        }
+        return ans.reduce((total, current) => total+current);
+
+      }
+
+
+
+      romanToInt("I") // 1
+      romanToInt("III"); //3
+      romanToInt("IV"); //4
+      romanToInt("IX"); //9
+      romanToInt("LVIII"); //58
+      romanToInt("MCMXCIV"); // 1994
+      romanToInt("MMMCMXCIX"); // 3999
+    </script>
+  </body>
+</html>
